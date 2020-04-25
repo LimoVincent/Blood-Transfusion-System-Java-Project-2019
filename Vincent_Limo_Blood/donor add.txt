@@ -1,0 +1,20 @@
+try {
+
+            String sql2;
+            sql2 = "Insert into donor (lastName,ID, bloodGroup, rhesusFactor, phoneNumber, location, VolumeWilling) values (?,?,?,?,?,?,?)";
+            pst2 = conn2.prepareStatement(sql2);
+            pst2.setString(1,jTextField1.getText());
+            pst2.setString(2, (Integer.parseInt(jTextField2.getText())));  //ID int
+            pst2.setString(3, (String) jComboBox3.getSelectedItem());
+            pst2.setString(4, (String) jComboBox5.getSelectedItem());
+            pst2.setString(5,jTextField4.getText());
+            pst2.setString(6,(Double.parseDouble(jTextField5.getText())));
+            pst2.setString(7,jTextField6.getText());
+            pst2.execute();
+            JOptionPane.showMessageDialog(null, "New Donor Created!");
+
+        } catch (HeadlessException | NumberFormatException | SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        // TODO add your handling code here:
+    
